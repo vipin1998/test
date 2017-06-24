@@ -1,11 +1,11 @@
 var express = require('express');
-var router = express.Router();
+var signupRoutes = express.Router();
 
 /* GET home page. */
-router.get('/', function(req, res) {
+signupRoutes.get('/', function(req, res) {
     res.json({
         "message" : "hello"
      })
 });
 
-module.exports = router;
+module.exports = signupRoutes;
