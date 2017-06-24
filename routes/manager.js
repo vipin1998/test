@@ -4,7 +4,13 @@ var User = require('./models/user');
 var Leave = require('./models/leave');
 
 /* GET home page. */
-managerRoutes.get('/', function(req, res) {
+managerRoutes.put('/check_application', function(req, res) {
+    res.json({
+        "message" : "hello"
+     })
+});
+
+managerRoutes.get('/get_all_applications', function(req, res) {
     res.json({
         "message" : "hello"
      })

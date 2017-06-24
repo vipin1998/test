@@ -5,7 +5,13 @@ var User = require('./models/user');
 var Leave = require('./models/leave');
 
 /* GET home page. */
-employeeRoutes.get('/', function(req, res) {
+employeeRoutes.get('/leave_applications', function(req, res) {
+    res.json({
+        "message" : "hello"
+     })
+});
+
+employeeRoutes.post('/new_application', function(req, res) {
     res.json({
         "message" : "hello"
      })
