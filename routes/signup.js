@@ -22,11 +22,20 @@ var Verify = require('./verify');
 */
 signupRoutes.post('/user',Verify.checkAdmin, function(req, res , next)
  {
+     /*
+        ####  params  ####
+        email : email in form of string
+
+        ####  returns  ####
+        true if email format is correct otherwise not
+     */
     function validateEmail(email) 
     {
         var re = /\S+@\S+\.\S+/;
         return re.test(email);
     }
+
+    
     if(!validateEmail(req.body.email))
     {
         res.end('Invalid Email');
