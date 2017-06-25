@@ -20,7 +20,7 @@ var Verify = require('./verify');
     ## Returns ##
     Add a user in database
 */
-signupRoutes.post('/employee',Verify.checkAdmin, function(req, res , next)
+signupRoutes.post('/user',Verify.checkAdmin, function(req, res , next)
  {
     function validateEmail(email) 
     {
@@ -33,34 +33,24 @@ signupRoutes.post('/employee',Verify.checkAdmin, function(req, res , next)
     }
     else
     {
-        User.find({'email' : req.body.email} , function(err , email_user)
+        User.find({'email' : req.body.email} , function(err , old_user)
         {
-            if(email_user.length != 0)
+            if(old_user.length != 0)
             {
                 res.end('email id already registered');
             }
             else
             {
-                User.find({'username' : req.body.username} , function (err,username_user)
+                User.create(req.body , function(err , new_user)
                 {
-                    if(username_user.length != 0)
+                    if (err)
                     {
-                        res.end('username already registered');
-                    }
-                    else
-                    {
-                        User.create(req.body , function(err , new_user)
-                        {
-                            if (err)
-                            {
-                                res.end('Role not available');
-                            };
-                            res.writeHead(200, {
-                                'Content-Type': 'text/plain'
-                            });
-                            res.end('Added the user with role ' + req.body.role);
-                        })
-                    }
+                        res.end('Role not available');
+                    };
+                    res.writeHead(200, {
+                        'Content-Type': 'text/plain'
+                    });
+                    res.end('Added the user with role ' + req.body.role);
                 })
             }
         })

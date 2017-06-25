@@ -15,9 +15,8 @@ var userSchema = new Schema({
         type : String,
         enum : ['Manager' , 'Employee']
     },
-    username : {
-        type : String,
-        unique : true
+    password : {
+        type : String
     }
 })
 

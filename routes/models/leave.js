@@ -1,10 +1,10 @@
 var mongoose = require('mongoose');
 var leaveSchema = mongoose.Schema({
     startDate : {
-        type : Date
+        type : String
     },
     endDate : {
-        type : Date
+        type : String
     },
     requestedBy : {
         type: mongoose.Schema.Types.ObjectId,
@@ -14,7 +14,7 @@ var leaveSchema = mongoose.Schema({
         type :  Date
     },
     approvedAt : {
-        type : Date
+        type : String
     },
     approvalStatus : {
         type : String,
