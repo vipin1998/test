@@ -32,7 +32,6 @@ employeeRoutes.get('/leave_applications/:email/:password', function(req, res)
         }
         else
         {
-            console.log(user[0]._id);
             Leave.find({requestedBy : user[0]._id},function (err,leave)
             {
                 res.json(leave);
