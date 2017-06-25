@@ -8,7 +8,7 @@ employeeRoutes.use(bodyParser.json());
 var User = require('./models/user');
 var Leave = require('./models/leave');
 
-/* GET home page. */
+
 employeeRoutes.get('/leave_applications/:email/:password', function(req, res) 
 {
     var email = req.params.email;
