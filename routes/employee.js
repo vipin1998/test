@@ -57,7 +57,7 @@ employeeRoutes.get('/leave_applications/:email/:password', function(req, res)
 employeeRoutes.post('/new_application', function(req, res) {
     var email = req.body.email;
     var password = req.body.password;
-    User.find({'email' : email , 'password' : password } , function (err , user )
+    User.find({'email' : email , 'password' : password , 'role' : 'Employee' } , function (err , user )
     {
         if(user.length == 0)
         {
