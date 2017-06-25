@@ -1,3 +1,5 @@
+/* Leave Schema  */
+
 var mongoose = require('mongoose');
 var leaveSchema = mongoose.Schema({
     startDate : {
@@ -14,7 +16,7 @@ var leaveSchema = mongoose.Schema({
         type :  Date
     },
     approvedAt : {
-        type : String
+        type : Date
     },
     approvalStatus : {
         type : String,

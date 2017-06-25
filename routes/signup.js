@@ -14,8 +14,8 @@ var Verify = require('./verify');
     firstName : users first name
     lastName : users last name
     email : users email id (should be unique for each user)
-    role : role of user in company(employee or manager)
-    username : username of user (should be unique)
+    role : role of user in company(Employee or Manager)
+    password : password of user
 
     ## Returns ##
     Add a user in database

@@ -1,8 +1,7 @@
-/*
+    /*
     * @author : Vipin Kumar
-    * @date : April 06, 2017
+    * @date : june 25, 2017
     * @brief This route check that the user is admin or not
-    * @todo Error handling.
     * @return Null.
     */
 
@@ -39,6 +38,13 @@ exports.checkAdmin = function (req, res, next)
         }
     };
 
+
+    /*
+    * @author : Vipin Kumar
+    * @date : june 25, 2017
+    * @brief This route check that the user is manager or not
+    * @return Null.
+    */
 exports.checkManager = function (req, res, next)
     {
         var auth_header = req.headers.authorization;
